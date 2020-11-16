@@ -1,6 +1,218 @@
 const TableContain = document.querySelector('.table__contain'),
   TableSubtitle = document.querySelector('.table__subtitle'),
-  requestURL = "../asource/table.json";
+  requestURL = "../asource/table.json",
+  table = [
+    {
+      "first": {
+        "name": null,
+        "kind": null,
+        "time": null,
+        "room": null,
+        "teacher": null
+      },
+      "second": {
+        "name": "МО (методы оптимизации)",
+        "kind": "Практика",
+        "time": "10:40 - 11:20, 11:25 - 12:05",
+        "room": "Корпус 3, 105",
+        "teacher": "Бышик Татьяна Петровна"
+      },
+      "third": {
+        "name": "Введение в ТМО",
+        "kind": "Лекция",
+        "time": "12:25 - 13:05, 13:10 - 13:50",
+        "room": "Корпус 3, 237",
+        "teacher": "Малинковский Юрий Владимирович"
+      },
+      "fourth": {
+        "name": null,
+        "kind": null,
+        "time": null,
+        "room": null,
+        "teacher": null
+      }
+    },
+    {
+      "first": {
+        "name": "МО (методы оптимизации)",
+        "kind": "Лекция",
+        "time": "9:00 - 9:40, 9:45 - 10:25",
+        "room": "3-1",
+        "teacher": "Жогаль Светлана Ивановна"
+      },
+      "second": {
+        "name": "Физкультура",
+        "kind": "Практика",
+        "time": "10:40 - 11:20, 11:25 - 12:05",
+        "room": "Стадион",
+        "teacher": "Марина Юрьевна, Наталья Александровна"
+      },
+      "third": {
+        "name": "МЧА (методы численного анализа)",
+        "kind": "Практика",
+        "time": "12:25 - 13:05, 13:10 - 13:50",
+        "room": "2-3",
+        "teacher": "Киргинцева Светлана Викторовна"
+      },
+      "fourth": {
+        "name": "ММСА (методы многомерного статистического анализа)",
+        "kind": "Лекция",
+        "time": "14:20 - 15:00, 15:05 - 15:45",
+        "room": "4-6",
+        "teacher": "Марченко Лариса Николаевна"
+      }
+    },
+    {
+      "first": {
+        "name": "ММСА (методы многомерного статистического анализа)",
+        "kind": "Практика",
+        "time": "9:00 - 9:40, 9:45 - 10:25",
+        "room": "2-5",
+        "teacher": "Марченко Лариса Николаевна"
+      },
+      "second": {
+        "name": "ТВиМС (теория вероятности и мат. статистика)",
+        "kind": "Лекция",
+        "time": "10:40 - 11:20, 11:25 - 12:05",
+        "room": "3-1",
+        "teacher": "Якубович Оксана Владимировна"
+      },
+      "third": {
+        "name": "АХД (анализ хозяйственной деятельности)",
+        "kind": "Практика",
+        "time": "12:25 - 13:05, 13:10 - 13:50",
+        "room": "Корпус 3, 205",
+        "teacher": "Алексеенко Наталья Анатольевна"
+      },
+      "fourth": {
+        "name": "АХД (анализ хозяйственной деятельности)",
+        "kind": "Лекция",
+        "time": "14:20 - 15:00, 15:05 - 15:45",
+        "room": "Корпус 3, 205",
+        "teacher": "Алексеенко Наталья Анатольевна"
+      }
+    },
+    {
+      "first": {
+        "name": "МО (методы оптимизации)",
+        "kind": "Лекция",
+        "time": "9:00 - 9:40, 9:45 - 10:25",
+        "room": "3-1",
+        "teacher": "Жогаль Светлана Ивановна"
+      },
+      "second": {
+        "name": "Физкультура",
+        "kind": "Практика",
+        "time": "10:40 - 11:20, 11:25 - 12:05",
+        "room": "Стадион",
+        "teacher": "Марина Юрьевна, Наталья Александровна"
+      },
+      "third": {
+        "name": "ТВиМС (теория вероятности и мат. статистика)",
+        "kind": "Практика",
+        "time": "12:25 - 13:05, 13:10 - 13:50",
+        "room": "3-1",
+        "teacher": "Якубович Оксана Владимировна"
+      },
+      "fourth": {
+        "name": null,
+        "kind": null,
+        "time": null,
+        "room": null,
+        "teacher": null
+      }
+    },
+    {
+      "first": {
+        "name": "МЧА (методы численного анализа)",
+        "kind": "Лекция",
+        "time": "9:00 - 9:40, 9:45 - 10:25",
+        "room": "3-1",
+        "teacher": "Березовская Елена Михайловна"
+      },
+      "second": {
+        "name": "ИГИ (избранные главы инворматики)",
+        "kind": "Лекция",
+        "time": "10:40 - 11:20, 11:25 - 12:05",
+        "room": "2-1а",
+        "teacher": "Близнец Игорь Васильевич"
+      },
+      "third": {
+        "name": "БЖЧ (безопасность жизнедеятельности человека)",
+        "kind": "Лекция",
+        "time": "12:25 - 13:05, 13:10 - 13:50",
+        "room": "4-5",
+        "teacher": "Осипенко Галина Леонидовна"
+      },
+      "fourth": {
+        "name": "БЖЧ (безопасность жизнедеятельности человека)",
+        "kind": "Практика",
+        "time": "14:20 - 15:00, 15:05 - 15:45",
+        "room": "3-14",
+        "teacher": "Осипенко Галина Леонидовна"
+      }
+    },
+    {
+      "first": {
+        "name": null,
+        "kind": null,
+        "time": null,
+        "room": null,
+        "teacher": null
+      },
+      "second": {
+        "name": null,
+        "kind": null,
+        "time": null,
+        "room": null,
+        "teacher": null
+      },
+      "third": {
+        "name": null,
+        "kind": null,
+        "time": null,
+        "room": null,
+        "teacher": null
+      },
+      "fourth": {
+        "name": null,
+        "kind": null,
+        "time": null,
+        "room": null,
+        "teacher": null
+      }
+    },
+    {
+      "first": {
+        "name": null,
+        "kind": null,
+        "time": null,
+        "room": null,
+        "teacher": null
+      },
+      "second": {
+        "name": null,
+        "kind": null,
+        "time": null,
+        "room": null,
+        "teacher": null
+      },
+      "third": {
+        "name": null,
+        "kind": null,
+        "time": null,
+        "room": null,
+        "teacher": null
+      },
+      "fourth": {
+        "name": null,
+        "kind": null,
+        "time": null,
+        "room": null,
+        "teacher": null
+      }
+    }
+  ];
 
 const createTemplate = (item, number) => {
   if (item.name !== null) {
@@ -32,22 +244,27 @@ window.addEventListener('load', () => {
   else if (today == 6) todayText = "Суббота"
   else if (today == 7) todayText = "Воскресенье"
   TableSubtitle.textContent = todayText;
-  fetch(requestURL)
-    .then(response => response.json())
-    .then(data => {
-      if (data) {
-        data.forEach(element => {
-          var a = 1;
-          for (number in element) {
-            console.log(number);
-            TableContain.innerHTML += createTemplate(element[number], a);
-            a++;
-          }
-          // element.forEach(number => {
-          // TableContain.innerHTML += createTemplate(element)
-          // })
+  // fetch(requestURL)
+  //   .then(response => response.json())
+  //   .then(data => {
+  //     if (data) {
+  //       data.forEach(element => {
+  //         var a = 1;
+  //         for (number in element) {
+  //           console.log(number);
+  //           TableContain.innerHTML += createTemplate(element[number], a);
+  //           a++;
+  //         }
+  //       });
+  //     }
+  //   });
 
-        });
-      }
-    })
-})
+  table.forEach(element => {
+    var a = 1;
+    for (number in element) {
+      console.log(number);
+      TableContain.innerHTML += createTemplate(element[number], a);
+      a++;
+    }
+  })
+});
