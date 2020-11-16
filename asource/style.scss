@@ -1,0 +1,66 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@1,300&family=Oswald:wght@400;700&display=swap");
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    border: none;
+}
+a {
+    color: inherit;
+    text-decoration: none;
+}
+li {
+    list-style: none;
+}
+
+$background: #c8d6e5;
+$text: #341f97;
+$fontFamily: "Oswald", sans-serif;
+$fontFamilyItal: "Montserrat", sans-serif;
+// $text: #54a0ff;
+// $text:#01a3a4;
+// $text: #576574;
+
+body {
+    // background-color: $background;
+    color: $text;
+    overflow-x: hidden;
+    font-family: $fontFamily;
+}
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+.table__title {
+    margin-top: 20px;
+    font-size: 25px;
+}
+.table__subtitle {
+    font-family: $fontFamilyItal;
+}
+.class {
+        border-radius: 7px;
+    padding: 5px 15px;
+    box-shadow: 0 0 20px #00000030;
+    margin: 15px auto;
+    & p {
+        margin: 7px 0;
+    }
+}
+.class__teacher, .class__kind {
+    font-family: $fontFamilyItal;
+}
+.noclass {
+        box-shadow: 0 0 20px #ee525380;
+    padding: 10px;
+    border-radius: 7px;
+    margin: 10px auto;
+}
+.noclass__title {
+    font-family: $fontFamilyItal;
+
+}
+.number {
+    margin-right: 15px;
+}
