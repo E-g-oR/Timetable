@@ -25,33 +25,36 @@ body {
 .container {
   max-width: 1200px;
   margin: 0 auto;
-  padding: 0 15px;
 }
 
 .table__title {
-  margin-top: 20px;
+  margin: 20px;
   font-size: 25px;
   font-weight: 600;
 }
 
 .table__subtitle {
+  margin-left: 20px;
   font-family: "Open Sans", sans-serif;
   font-style: italic;
 }
 
+.table__contain {
+  margin-top: 20px;
+}
+
 .class {
-  border-radius: 7px;
-  padding: 5px 15px;
-  -webkit-box-shadow: 0 0 20px #00000030;
-          box-shadow: 0 0 20px #00000030;
-  margin: 15px auto;
+  border-top: 1px solid #c8d6e5;
+  border-bottom: 1px solid #c8d6e5;
+  padding: 10px 20px;
 }
 
 .class p {
   margin: 7px 0;
 }
 
-.class__teacher, .class__kind {
+.class__teacher,
+.class__kind {
   font-family: "Open Sans", sans-serif;
   font-style: italic;
 }
@@ -66,12 +69,8 @@ body {
   max-width: 210px;
 }
 
-.noclass {
-  -webkit-box-shadow: 0 0 20px #ee525380;
-          box-shadow: 0 0 20px #ee525380;
-  padding: 10px;
-  border-radius: 7px;
-  margin: 10px auto;
+._noclass {
+  background-color: #f3f3f3;
 }
 
 .noclass__title {

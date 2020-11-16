@@ -231,7 +231,7 @@ const createTemplate = (item, number) => {
       </div>
     `
   } else return `
-    <div class="noclass">
+    <div class="class _noclass">
       <h1 class="noclass__title"><span class="number">${number}.</span>Пары нет</h1>
     </div>
   `
@@ -241,6 +241,9 @@ const createTemplate = (item, number) => {
 window.addEventListener('load', () => {
   var date = new Date();
   var today = date.getDay() - 1,
+    year = date.getFullYear(),
+    month = date.getMonth() + 1,
+    monthDate = date.getDate(),
     todayText = "";
   if (today == 0) {
     todayText = "Понедельник"
@@ -263,7 +266,7 @@ window.addEventListener('load', () => {
   else if (today == 6) {
     todayText = "Воскресенье"
   }
-  TableSubtitle.textContent = todayText;
+  TableSubtitle.textContent = `${todayText}, ${monthDate}.${month}.${year}`;
   // fetch(requestURL)
   //   .then(response => response.json())
   //   .then(data => {
